@@ -1,0 +1,344 @@
+<!--Use for Paralaxx scrolling:http://www.minimit.com/articles/lets-animate/parallax-backgrounds-with-centered-content
+-->
+
+<style>
+    @import url("//fonts.googleapis.com/css?family=Indie+Flower");
+@import url("//fonts.googleapis.com/css?family=Lato:400,400italic");
+
+body,   
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* Changes navbar brand text to imported font */
+.navbar-brand {
+  font-size: 3em;
+  font-family: 'Indie Flower', cursive;
+}
+
+/* Padding needed because of nav-fixed-top */
+body {
+  padding-top: 50px;
+}
+
+/* Sets the text "Menu" next to the Hamburger */
+.navbar-toggle:before {
+  content: "Menu";
+  left: -50px;
+  top: 6px;
+  position: absolute;
+  width: 50px;
+  color: #fff;
+}
+
+.home-body {
+  padding-top: 25vh;
+  //background: url(https://i.imgur.com/KvNSWeb.jpg) no-repeat top center fixed;
+  //background: url(https://i.imgur.com/Cpey9ae.png) no-repeat top center fixed;
+  //background-color: #011627;
+  //background-size: cover;
+  background: #43cea2; /* fallback for old browsers */
+background: -webkit-linear-gradient(right, #43cea2, #185a9d);
+background: -moz-linear-gradient(right, #43cea2, #185a9d);
+background: -o-linear-gradient(right, #43cea2, #185a9d);
+background: linear-gradient(to left, #43cea2, #185a9d); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+}
+
+/* Centers the content on the page without need for padding etc.
+.home-body {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+-------------------------- */
+
+.home-body h1 {
+  font-size: 5em;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.home-body h2 {
+  font-size: 1.2em;
+  color: #fff;
+  //opacity: .7;
+  padding-bottom: 15px;
+}
+
+h1{
+  font-family: "Lato", serif;
+  color: #8E8986;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+h2, h3, h4{
+  font-family: "Lato", serif;
+  color: #fff;
+  font-weight: bold;
+  padding-bottom: 5px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+}
+
+h4 {
+  opacity: 0.9;
+}
+
+hr {
+  width: 80%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+}
+
+.btn {
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0);
+  color: #fff;
+  margin: 0 3px;
+}
+
+.valign {
+  vertical-align: 3px;
+}
+
+li span {
+  margin: 0 7px 0 0;
+}
+
+.fb-blue {
+  color: #3b5998;
+}
+
+.github-black {
+  color: #000;
+}
+
+.in-blue {
+  color: #0177B5;
+}
+
+.padding-arrow-home {
+  margin-top: 25vh;
+}
+
+#arrowToAbout {
+  display: none;
+}
+
+a[id*="a-"] { /* Fix for all anchor tags to adjust because of the fixed navbar of 50px */
+  display: block;
+  content: "";
+  height: 50px;
+  margin: -50px 0 0;
+}
+
+#about-full {
+  //background-color: #247BA0;
+  background-color: #16425B;
+}
+
+#about-body {
+  height: 100%;
+  //height: calc(100vh - 50px);
+}
+
+#about-body h2 {
+  margin: 13vh 0 5vh 0;
+}
+
+#about-body a {
+  color: #2460A0;
+}
+
+#about-body h4 {
+  margin-bottom: 10%;
+  line-height: 1.8em;
+  font-size: 1.5em;
+}
+
+#portrait {
+  margin-top: 20vh;
+  width: 60%;
+}
+
+.padding-arrow-about {
+  padding: 20px;
+}
+
+#portfolio-body h2 {
+  padding: 10px 0 0 0;
+}
+
+#portfolio-body h3 {
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+
+.projectSquare {
+  height: 350px;
+  width: 350px;
+  background-color: black;
+  margin: 0 auto;
+}
+</style>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="container-fluid">
+      <!-- Collapsable menu -->
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#a-home">Stein G.</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#a-home">Home</a></li>
+              <li><a href="#a-about">About</a></li>
+              <li><a href="#a-portfolio">Portfolio</a></li>
+              <li><a href="#a-contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div><!--/navbar -->
+    <a name="home" id="a-home"></a>
+    <div class="home-body text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Hybrid Design Studio</h1>
+            <h2>Full Stack Web development • Graphic UI/UX Design • SEO</h2>
+            <hr />
+            <ul class="list-inline">
+              <li>
+                <a href="https://www.facebook.com/stein.goetschalckx" class="btn btn-default" target="_blank">
+                  <i class="fa fa-facebook fa-2x fa-fw fb-blue"></i>
+                  <span class="valign">Facebook
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Stiino0" class="btn btn-default" target="_blank">
+                  <i class="fa fa-github fa-2x fa-fw github-black"></i>
+                  <span class="valign">Github
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://be.linkedin.com/pub/stein-goetschalckx/43/98b/127" class="btn btn-default" target="_blank">
+                  <i class="fa fa-linkedin fa-2x fa-fw in-blue"></i>
+                  <span class="valign"> Linkedin
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://freecodecamp.com/stiino0" class="btn btn-default" target="_blank">
+                  <i class="fa fa-fire fa-2x fa-fw"></i>
+                  <span class="valign"> FreeCodeCamp
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <div class="text-center padding-arrow-home" id="arrowToAbout">
+              <a class="fa-stack fa-lg" href="#a-about">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-arrow-down fa-stack-1x fa-inverse"></i>
+              </a>
+            </div>
+          </div>
+        </div> 
+      </div><!-- /.container -->
+  </div><!-- /.home-body -->
+  
+  <a name="about" id="a-about"></a>
+  <div id="about-full">
+    <div class="container">
+      <div class="row" id="about-body">
+        <div class="col-md-6">
+          <h2>This is the part where I talk about myself!</h2>
+          <h4>I'm a <a href="https://freecodecamp.com/Stiino0" target="_blank">self taught</a> web designer, developer, co-founder and entrepreneur based in Finland.
+          I'm currently part of a small web development team in a upcoming start-up, building web and mobile applications.
+          My passion is to use technology based solutions, to help solve real world challenges.<br />
+          <strong>Competences:</strong><br />
+          <strong>Languages and Frameworks:</strong><br />
+          Javascript, HTML5, CSS3, jQuery, Bootstrap3, Angular.js, Meteor.js.<br />
+          <strong>Tools & expertise:</strong><br />
+          Git, Responsive Web Design, Agile Methodologies.</h4>
+        </div>
+        <div class="col-md-6">
+          <img src="https://i.imgur.com/kuLdyIjl.jpg" alt="Portrait Stein" id="portrait" class="img-circle img-responsive center-block" />
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center padding-arrow-about" id="arrowToPortfolio">
+                <a class="fa-stack fa-lg" href="#a-portfolio">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-arrow-down fa-stack-1x fa-inverse"></i>
+                </a>
+            </div>
+          </div>
+      </div>
+    </div> 
+  </div> <!-- end about -->
+    
+  <a name="portfolio" id="a-portfolio"></a>
+  <div id="portfolio-full">
+    <div class="container text-center">
+      <div class="row" id="portfolio-body">
+        <div class="col-md-12">
+          <h2>My Portfolio.</h2>
+          <h3>Take a look at my most recent projects</h3>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-md-4">
+            <div class="projectSquare"></div>
+          </div>
+          <div class="col-xs-6 col-md-4">
+            <div class="projectSquare"></div>
+          </div>
+          <div class="col-xs-6 col-md-4">
+            <div class="projectSquare"></div>
+          </div>
+        </div>
+        
+      </div>
+    </div> 
+  </div> <!-- end portfolio -->
+    
+  <a name="contact" id="a-contact"></a>
+  <div id="contact-full">
+    <div class="container">
+      <div class="row" id="contact-body">
+        <div class="col-md-6">
+          
+        </div>
+      </div>
+    </div> 
+  </div> <!-- end contact --> 
+    <script src="">
+
+        /* Makes the clicked social link remove it's focus state when retunrning to page */
+$(".btn").mouseup(function(){
+  $(this).blur();
+});
+
+$(document).ready(function(){
+  $("#arrowToAbout").delay(3000).fadeIn("slow");
+});
+
+/* Makes the first anchor jump 50 pixels up so the fixed navbar is ok -- changed by CSS a[id*="a-"]
+window.addEventListener("hashchange", function() { scrollBy(0, -50) })*/
+
+    </script>
+  </body>
